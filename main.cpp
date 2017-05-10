@@ -8,6 +8,7 @@ int main() {
 
     int x = 3;
     int y = 5;
+    int z = 15; // The GCD (greatest common divisor) of 3 & 5 is 1, so the LCM (least common multiple) is 15
     int sumx = 0;
     int sumy = 0;
     int total = 0;
@@ -30,18 +31,22 @@ int main() {
     // Problem
     int n = 1000;
     for (int i = 1; i < n; i++) {
-        if (x * i < n) {
-            sumx += x * i;
-            // cout << "\t" << sumx << " ";
+        if (x * i < n && (x * i) % z != 0) { // if 3 * i is less than 1000 and if x * i mod is not true
+            sumx = x * i;
+            total += sumx;
+            cout << "\t" << sumx << " " << endl;
+            cout << "\t\t" << total << " " << endl;
+            
         }
         if (y * i < n) {
-            sumy += y * i;
-            // cout << "\t" << sumy << " ";         
+            sumy = y * i;
+            total += sumy;
+            cout << "\t" << sumy << " " << endl;
+            cout << "\t\t" << total << " " << endl;
         }
     }
-    total = sumx + sumy;
+    cout << endl;
     cout << "\t" << total << endl;
-
 
     return 0;
 }
